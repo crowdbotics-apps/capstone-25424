@@ -1,0 +1,44 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/backend"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  labels:
+  - dependencies
+  - python
+  ignore:
+  - dependency-name: boto3
+    versions:
+    - 1.17.52
+    - 1.17.53
+    - 1.17.54
+    - 1.17.55
+    - 1.17.56
+    - 1.17.57
+    - 1.17.58
+    - 1.17.59
+    - 1.17.60
+  - dependency-name: django-extensions
+    versions:
+    - 3.1.2
+  commit-message:
+    prefix: Crowdbotics
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  labels:
+  - dependencies
+  - javascript
+  ignore:
+  - dependency-name: react-redux
+    versions:
+    - 7.2.3
+  - dependency-name: react-native-keyboard-aware-scroll-view
+    versions:
+    - 0.9.3
+  commit-message:
+    prefix: Crowdbotics
